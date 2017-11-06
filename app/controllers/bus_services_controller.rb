@@ -1,5 +1,17 @@
 class BusServicesController < ApplicationController
   def show
-    render plain: 'bus_services'
+    find_bus_service!
+    render plain: bus_stops
+  end
+
+  private
+
+  def find_bus_service!
+    @bus_service = BusService.find_by(service_number: params[:id])
+    raise ActiveRecord::RecordNotFound if @bus_service.nil?
+  end
+
+  def bus_stops
+    @bus_service.bus_stops.join(',')
   end
 end
