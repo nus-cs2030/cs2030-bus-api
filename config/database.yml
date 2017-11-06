@@ -80,6 +80,4 @@ test:
 #
 production:
   <<: *default
-  database: cs2030-bus-api_production
-  username: cs2030-bus-api
-  password: <%= ENV['CS2030-BUS-API_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
