@@ -12,7 +12,7 @@ BUS_STOPS_SERVICES_PATH = "#{Rails.root}/db/csvs/bus-stops-services.csv"
 
 puts 'Seeding bus stops...'
 File.foreach(BUS_STOPS_PATH) do |line|
-  stop_number, longitude, latitude, stop_name = line.strip.split(',')
+  stop_number, latitude, longitude, stop_name = line.strip.split(',')
 
   BusStop.create!(
     bus_services: [],
