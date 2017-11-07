@@ -3,4 +3,5 @@ Rails.application.routes.draw do
 
   resources :bus_services, only: [:show]
   resources :bus_stops, only: [:show]
+  get '/bus_stops/:id/nearby', to: 'bus_stops#nearby'
 end

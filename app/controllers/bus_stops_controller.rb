@@ -4,6 +4,18 @@ class BusStopsController < ApplicationController
     render plain: bus_services
   end
 
+  def nearby
+    find_bus_stop!
+
+    nearby_bus_stops = []
+    BusStop.all.each do |bus_stop|
+      next if @bus_stop == bus_stop
+      nearby_bus_stops << bus_stop.stop_number if @bus_stop.nearby?(bus_stop)
+    end
+
+    render plain: nearby_bus_stops.join(',')
+  end
+
   private
 
   def find_bus_stop!
