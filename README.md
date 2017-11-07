@@ -1,24 +1,28 @@
-# README
+# CS2030 Bus API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+All results are in plain text, separated by commas.
 
-Things you may want to cover:
+If an invalid `bus stop number` or `bus service number` is supplied, the page responds `404 Not Found` with a 404 HTTP status.
 
-* Ruby version
+---
 
-* System dependencies
+### `/bus_services/<bus service number>`
+e.g. https://cs2030-bus-api.herokuapp.com/bus_services/95
 
-* Configuration
+Bus stops served by a particular bus service
 
-* Database creation
+---
 
-* Database initialization
+### `/bus_stops/<bus stop number>`
+e.g. https://cs2030-bus-api.herokuapp.com/bus_stops/18331
 
-* How to run the test suite
+Bus services that serve a particular bus stop
 
-* Services (job queues, cache servers, search engines, etc.)
+---
 
-* Deployment instructions
+### `/bus_stops/<bus stop number>/nearby`
+e.g. https://cs2030-bus-api.herokuapp.com/bus_stops/18331/nearby
 
-* ...
+Bus stops that are within a 5-minute walking distance (~400m) of a particular bus stop
+
+---
