@@ -7,7 +7,7 @@ class BusStopsController < ApplicationController
   private
 
   def find_bus_stop!
-    @bus_stop = BusStop.find_by(stop_number: params[:id])
+    @bus_stop ||= BusStop.find_by(stop_number: params[:id])
     raise ActiveRecord::RecordNotFound if @bus_stop.nil?
   end
 
