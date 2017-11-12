@@ -1,7 +1,7 @@
 class BusServicesController < ApplicationController
   def show
     find_bus_service!
-    render plain: bus_stops
+    respond_with bus_stops
   end
 
   private

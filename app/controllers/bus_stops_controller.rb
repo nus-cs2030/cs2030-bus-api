@@ -1,7 +1,7 @@
 class BusStopsController < ApplicationController
   def show
     find_bus_stop!
-    render plain: bus_services
+    respond_with bus_services
   end
 
   def nearby
@@ -13,7 +13,7 @@ class BusStopsController < ApplicationController
       nearby_bus_stops << bus_stop.stop_number if @bus_stop.nearby?(bus_stop)
     end
 
-    render plain: nearby_bus_stops.join(',')
+    respond_with nearby_bus_stops.join(',')
   end
 
   private
