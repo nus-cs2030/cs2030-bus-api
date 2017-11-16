@@ -2,7 +2,6 @@ class ApplicationController < ActionController::API
   rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
 
   def respond_with(text)
-    sleep(0.1)
     render plain: text
   end
 
