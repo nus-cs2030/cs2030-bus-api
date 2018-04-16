@@ -1,7 +1,7 @@
 class BusStopsController < ApplicationController
   def show
     find_bus_stop!
-    respond_with @bus_stop.bus_services.join(',')
+    respond_with @bus_stop.bus_services.join(",")
   end
 
   def nearby
