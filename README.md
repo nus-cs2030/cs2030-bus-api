@@ -35,7 +35,9 @@ _This guide assumes that you are developing on macOS._
 
 1. Install PostgreSQL (Recommended: [Postgres.app](https://postgresapp.com/) or via Homebrew)
 
-1. Clone the repo
+1. Clone the repo and `cd` into it
+
+1. Run `gem install bundler`, followed by `bundle` to install all dependencies
 
 1. Run `rails db:setup` to create the database and populate the seed data
 
