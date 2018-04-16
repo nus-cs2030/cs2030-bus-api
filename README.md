@@ -26,3 +26,17 @@ e.g. https://cs2030-bus-api.herokuapp.com/bus_stops/18331/nearby
 Bus stops that are within a 5-minute walking distance (~400m) of a particular bus stop
 
 ---
+
+# Setup
+
+_This guide assumes that you are developing on macOS._
+
+1. Install Ruby 2.4.1 (Recommended: [rbenv](https://github.com/rbenv/rbenv) or [rvm](https://rvm.io/))
+
+1. Install PostgreSQL (Recommended: [Postgres.app](https://postgresapp.com/) or via Homebrew)
+
+1. Clone the repo
+
+1. Run `rails db:setup` to create the database and populate the seed data
+
+1. Start the server with `rails s` and visit `localhost:3000` to test that it works on your local machine
