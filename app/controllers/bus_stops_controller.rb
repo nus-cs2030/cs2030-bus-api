@@ -1,7 +1,7 @@
 class BusStopsController < ApplicationController
   def show
     find_bus_stop!
-    respond_with bus_services
+    respond_with @bus_stop.bus_services.join(',')
   end
 
   def nearby
@@ -21,9 +21,5 @@ class BusStopsController < ApplicationController
   def find_bus_stop!
     @bus_stop ||= BusStop.find_by(stop_number: params[:id])
     raise ActiveRecord::RecordNotFound if @bus_stop.nil?
-  end
-
-  def bus_services
-    @bus_stop.bus_services.join(',')
   end
 end
