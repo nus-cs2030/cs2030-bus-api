@@ -9,8 +9,10 @@ class ApplicationController < ActionController::API
   private
 
   def introduce_delay
-    puts 'Introducing 100ms delay...'
-    sleep(0.1)
+    if ENV['DELAY'] == "1"
+      puts 'Introducing 100ms delay...'
+      sleep(0.1)
+    end
   end
 
   def record_not_found
