@@ -72,7 +72,8 @@ GEM
     nokogiri (1.13.6-x86_64-linux)
       racc (~> 1.4)
     pg (0.21.0)
-    puma (3.12.6)
+    puma (4.3.12)
+      nio4r (~> 2.0)
     racc (1.6.0)
     rack (2.2.3)
     rack-test (1.1.0)
@@ -133,7 +134,7 @@ DEPENDENCIES
   byebug
   listen (>= 3.0.5, < 3.2)
   pg (~> 0.18)
-  puma (~> 3.12.6)
+  puma (~> 4.3.12)
   rails (~> 5.2.8)
   spring
   spring-watcher-listen (~> 2.0.0)
